@@ -1,1 +1,1 @@
-web: python test_inf0b0t.py
+web: python inf0b0t.py
