@@ -1,4 +1,5 @@
 import requests
+from time import sleep
 
 url = "https://api.telegram.org/bot902753904:AAHy0XRihb92qKe5HGDxmHChsuCGXw4r_Ic/"
 
@@ -26,7 +27,7 @@ def main():
     update_id = last_update(get_updates_json(url))['update_id']
     while True:
         if update_id == last_update(get_updates_json(url))['update_id']:
-           send_mess(get_chat_id(last_update(get_updates_json(url))), 'test')
+           send_mess(get_chat_id(last_update(get_updates_json(url))), 'test from inf0b0t')
            update_id += 1
         sleep(1)       
 
