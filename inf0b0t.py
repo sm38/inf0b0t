@@ -19,7 +19,8 @@ def get_chat_id(update):
     return chat_id
 
 def send_mess(chat, text):  
-    params = {'chat_id': chat, 'text': text}
+    parse_mode = 'Markdown'
+    params = {'chat_id': chat, 'text': text, 'parse_mode': parse_mode}
     response = requests.post(url + 'sendMessage', data=params)
     return response
 
