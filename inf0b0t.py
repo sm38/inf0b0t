@@ -24,12 +24,22 @@ def send_mess(chat, text):
     response = requests.post(url + 'sendMessage', data=params)
     return response
 
+def send_answer_query(chat, text):  
+    params = {'chat_id': chat, 'text': text}
+    response = requests.post(url + 'answerInlineQuery', data=params)
+    return response
+
 def main():  
+    query_text = {"www":"1", "kkk":"4", "bbb":"8"} 
     update_id = last_update(get_updates_json(url))['update_id']
+    chat_id =  get_chat_id(last_update(get_updates_json(url)))
     while True:
         if update_id == last_update(get_updates_json(url))['update_id']:
            message_text = last_update(get_updates_json(url))['message']['text']
-           send_mess(get_chat_id(last_update(get_updates_json(url))), 'Answer from *inf0b0t*'+chr(10)+'on message #'+format(update_id) + ' : '+chr(10) + message_text)
+           if message_text == '*':
+              send_answer_query(chat_id, query_text)
+           else :  
+              send_mess(chat_id, 'Answer from *inf0b0t*'+chr(10)+'on message #'+format(update_id) + ' : '+chr(10) + message_text)
            update_id += 1
         sleep(1)       
 
