@@ -30,7 +30,7 @@ def send_answer_query(chat, text):
     response = requests.post(url + 'answerInlineQuery', data=params)
     return response
     
-def work_it(chat)
+def work_it(chat):
     keyboard = types.InlineKeyboardMarkup()
     callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
     keyboard.add(callback_button)
