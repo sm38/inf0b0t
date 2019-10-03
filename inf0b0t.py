@@ -40,6 +40,8 @@ def main():
               send_answer_query(chat_id, query_text)
            elif message_text == '**':
               send_mess(chat_id, 'Answer from *inf0b0t*'+chr(10)+'as JSON on message #'+format(update_id) + ' : '+chr(10) + query_text )
+           elif message_text == '***':
+              send_mess(chat_id, 'Answer from *inf0b0t*'+chr(10)+'on message #'+format(update_id) + ' : '+chr(10) + '*** is a three-star cognak - good chioce !' )
            else :  
               send_mess(chat_id, 'Answer from *inf0b0t*'+chr(10)+'on message #'+format(update_id) + ' : '+chr(10) + message_text)
            update_id += 1
