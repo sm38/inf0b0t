@@ -1,3 +1,4 @@
+import telebot
 import requests
 from time import sleep
 
@@ -28,6 +29,13 @@ def send_answer_query(chat, text):
     params = {'chat_id': chat, 'text': text}
     response = requests.post(url + 'answerInlineQuery', data=params)
     return response
+    
+def work_it(chat)
+    keyboard = types.InlineKeyboardMarkup()
+    callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
+    keyboard.add(callback_button)
+    bot.send_message(message.chat.id, "Я – сообщение из обычного режима", reply_markup=keyboard)
+
 
 def main():  
     query_text = {"www":"1", "kkk":"4", "bbb":"8"} 
@@ -36,8 +44,8 @@ def main():
     while True:
         if update_id == last_update(get_updates_json(url))['update_id']:
            message_text = last_update(get_updates_json(url))['message']['text']
-           if message_text == '123':
-              send_answer_query(chat_id, query_text)
+           if message_text[:4] == 'WORK':
+              do_work(chat_id);
            elif message_text == '456':
               send_mess(chat_id, 'Answer from *inf0b0t*'+chr(10)+'as JSON on message #'+format(update_id) + ' : '+chr(10) + query_text )
            elif message_text == '789':

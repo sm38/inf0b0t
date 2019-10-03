@@ -14,6 +14,7 @@ mypy-extensions==0.4.1
 parso==0.5.1
 pylint==2.3.1
 pyserial==3.4
+pyTelegramBotAPI==3.6.6
 requests==2.22.0
 Send2Trash==1.5.0
 six==1.12.0
